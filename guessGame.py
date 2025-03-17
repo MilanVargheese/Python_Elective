@@ -3,7 +3,7 @@ import random
 
 class guessGame(EasyFrame):
     def __init__(self):
-        EasyFrame.__init__(self,title="Number Guess Game",width=200,height=100)
+        EasyFrame.__init__(self,title="Number Guess Game",width=300,height=150)
         self.myNumber=random.randint(1,100)
         self.count=0
         self.l1=self.addLabel(text="Guess a number btw 1 and 100", row=0, column=0, columnspan=2, sticky="NSEW")
@@ -24,6 +24,10 @@ class guessGame(EasyFrame):
             self.l1["text"]="Guess is too Large"
 
     def NewGame(self):
-        guessGame().mainloop()
+        self.myNumber = random.randint(1, 100)
+        self.count = 0
+        self.l1["text"] = "Guess a number between 1 and 100"
+        self.t1.setNumber(0)  
+        self.next["state"] = "normal"
 guessGame().mainloop()
     
